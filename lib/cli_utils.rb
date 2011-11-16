@@ -7,7 +7,7 @@ module CliUtils
 
   def self.show_and_run_command(command)
     puts command
-    #system(command)
+    system(command)
   end
 
   def self.get_env_arg(default = :staging)
@@ -22,6 +22,13 @@ module CliUtils
 
   def self.get_remaining_arg
     self.args.last
+  end
+
+  def self.get_port_arg
+    self.args.each do |arg|
+      return arg if arg =~ /\d+/
+    end
+    nil
   end
 
   private

@@ -15,7 +15,9 @@ deploy has smart defaults like deploying always to the staging environment, from
 you can pass parameters to change it's defaults in any order you'd like
 
 === run ===
-Runs your rails app on the port set up in the config file (supports rails 2 and 3)
+Runs your rails app (supports rails 2 and 3)
+>> run [<port#>]
+Excepts port number or defaults to the port set up in the config file
 
 === remote ===
 SSH to a server using `ey ssh`, like deploy uses smart default.
