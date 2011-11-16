@@ -1,3 +1,5 @@
 apps:
-  env1:
-    staging:
+  my_env_app:
+    staging: staging_env_app
+    production: production_env_app
+    port: 1337

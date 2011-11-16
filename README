@@ -1,0 +1,29 @@
+= Ey Toolbox by Yon =
+This simple toolbox adds three commands to your unix environment
+for simple managing of your rails apps (especially if they're hosted on EngineYard)
+
+== Installing ==
+Fetch the files by running `git clone git@github.com:yonbergman/EyToolbox.git`
+Run `./install.rb` to add the three commands to you .alias file
+Clone the config.example.yml and add all the apps/enviroments you have set up in Engine Yard
+
+== Commands ==
+=== deploy ===
+The deploy commands wraps the `ey deploy` command and helps you use it smartly based on the current directory and current git branch
+>> deploy [env:staging|stage|production|prod] [migrate|migration] [<branch name>]
+deploy has smart defaults like deploying always to the staging environment, from the current branch you're working on and with no migrations
+you can pass parameters to change it's defaults in any order you'd like
+
+=== run ===
+Runs your rails app on the port set up in the config file (supports rails 2 and 3)
+
+=== remote ===
+SSH to a server using `ey ssh`, like deploy uses smart default.
+>> remote [env:stage|staging|prod|production]
+Defaults to ssh'ing to production env
+
+
+
+Yon.
+
+
