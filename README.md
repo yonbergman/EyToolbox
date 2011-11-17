@@ -37,6 +37,8 @@ you can pass parameters to change it's defaults in any order you'd like
 
 >Defaults to ssh'ing to production env
 >Links to the github page of that commit
+> Update:
+> Also prints the last deploy date and checks if you need to migrate.
 
 
 ### Yon
