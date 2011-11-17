@@ -30,6 +30,13 @@ you can pass parameters to change it's defaults in any order you'd like
 
 >Defaults to ssh'ing to production env
 
+> ### Revision
+> Checks the latest revision deployed to to a server
+
+        >> revision [env:stage|staging|prod|production]
+
+>Defaults to ssh'ing to production env
+>Links to the github page of that commit
 
 
 ### Yon

@@ -1,3 +1,4 @@
+github: "myAccount" #for linking to github
 apps:
   my_env_app:
     staging: staging_env_app
