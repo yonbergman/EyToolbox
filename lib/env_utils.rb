@@ -9,6 +9,8 @@ module EnvUtils
 
   def self.get_port
     self.get_env['port']
+  rescue
+    3000
   end
 
   def self.current_project
