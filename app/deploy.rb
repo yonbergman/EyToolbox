@@ -4,7 +4,7 @@ require ::File.expand_path('../../lib/utils',  __FILE__)
 def deploy(env,branch,migrate = false)
   env_name = EnvUtils.get_env_name(env)
   branch = GitUtils.current_branch if branch == :current
-  migrate_text = migrate ? "" : "--no-migrate"
+  migrate_text = migrate ? "--migrate" : "--no-migrate"
   puts "About to deploy"
   puts "   -e #{ColorUtil.colorize(env_name,:yellow)} -r #{ColorUtil.colorize(branch,:green)} #{migrate_text}"
   puts "                in 2 seconds..."
