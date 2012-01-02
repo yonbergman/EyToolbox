@@ -6,7 +6,7 @@
   command = "echo '#{line}' >> ~/.alias"
   system(command)
 end
-echo "done :)"
-echo "Wrote all the commands into your .alias file, make sure that you have this command in your .bashrc/.bash_profile"
-echo "'source ~/.alias'"
-echo "If you don't have it add it to the end of the file"
+puts "done :)"
+puts "Wrote all the commands into your .alias file, make sure that you have this command in your .bashrc/.bash_profile"
+puts "'source ~/.alias'"
+puts "If you don't have it add it to the end of the file"
