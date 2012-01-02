@@ -4,7 +4,8 @@ for simple managing of your rails apps (especially if they're hosted on EngineYa
 
 ## Installing ##
 - Fetch the files by running `git clone git@github.com:yonbergman/EyToolbox.git`  
-- Run `./install.rb` to add the three commands to you .alias file  
+- Run `./install.rb` to add the commands to your .alias file  
+- Make sure that you have "source ~/.alias" command in your bash_rc add if needed
 - Clone the `config.example.yml` and add all the apps/enviroments you have set up in Engine Yard
 
 ## Commands ##
