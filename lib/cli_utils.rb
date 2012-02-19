@@ -13,7 +13,8 @@ module CliUtils
   def self.get_env_arg(default = :staging)
     staging = self.has_argument(["staging","stage"]) ? :staging : nil
     production = self.has_argument(["production","prod"]) ? :production : nil
-    staging || production || default
+    demo = self.has_argument(["demo"]) ? :demo : nil
+    staging || demo || production || default
   end
 
   def self.has_migration_arg

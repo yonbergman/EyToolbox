@@ -13,6 +13,8 @@ if revision.nil? or revision.empty?
   CliUtils.error("No revision found")
 end
 puts "Revision: #{ColorUtil.colorize(revision,:yellow)}"
+GitUtils.create_tag(env, revision)
+puts "created tag"
 
 date = log_lines.scan(/Finished deploy at (.+)/).flatten.first
 puts "Last Deployed at #{date}" unless date.nil? or date.empty?
