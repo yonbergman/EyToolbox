@@ -15,7 +15,7 @@ module RailsUtils
   end
 
   def self.rails3_run
-    "#{self.current_dir}/script/rails server -p"
+    "#{self.current_dir}/script/rails server --debugger -p"
   end
 
   def self.current_dir
