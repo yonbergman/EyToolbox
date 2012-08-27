@@ -41,5 +41,11 @@ you can pass parameters to change it's defaults in any order you'd like
 > Update:
 > Also prints the last deploy date and checks if you need to migrate.
 
+> ### Recipe
+> Uploads and applys a recipe cookbook to a product env
+
+        >> revision [env:stage|staging|prod|production]
+
+> The project name defaults to current branch name. Must be run in the ey-cloud-recipes folder
 
 ### Yon

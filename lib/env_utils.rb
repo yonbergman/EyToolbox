@@ -3,6 +3,10 @@ module EnvUtils
   YAML_FILE = YAML.load_file(::File.expand_path('../../config.yml', __FILE__))
   APPS = YAML_FILE["apps"]
 
+  def self.get_env_for_project(project, env)
+    APPS[project.to_s][env.to_s]
+  end
+
   def self.get_env_name(env)
     self.get_env[env.to_s]
   end
@@ -14,7 +18,7 @@ module EnvUtils
   end
 
   def self.current_project
-    `pwd -P`.strip.split('/').last.downcase.to_s
+    current_path.split('/').last.downcase.to_s
   end
 
   def self.ey_env
@@ -23,6 +27,10 @@ module EnvUtils
 
   def self.github_account
     YAML_FILE["github"]
+  end
+
+  def self.current_path
+    `pwd -P`.strip
   end
 
   private
