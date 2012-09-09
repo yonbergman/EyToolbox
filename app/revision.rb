@@ -23,6 +23,12 @@ github_link = "https://github.com/#{EnvUtils.github_account}/#{project}/commit/#
 puts ""
 puts github_link
 
+head = GitUtils.current_branch
+github_compare_link = "https://github.com/#{EnvUtils.github_account}/#{project}/compare/#{revision}...#{head}"
+puts ""
+puts "Compare: "
+puts github_compare_link
+
 needs_migration = `git diff --name-only HEAD #{revision} | grep db/migrate`
 unless needs_migration.empty?
   puts ColorUtil.colorize("\nNeeds to migrate!", :red)
