@@ -1,4 +1,4 @@
-#! /usr/bin/ruby
+#!/usr/bin/env ruby
 require ::File.expand_path('../../lib/utils',  __FILE__)
 
 port = CliUtils.get_port_arg || EnvUtils.get_port

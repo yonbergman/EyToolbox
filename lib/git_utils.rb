@@ -5,8 +5,17 @@ module GitUtils
   end
 
   def self.create_tag(name, revision)
-  	`git tag -d #{name}`
-	`git tag #{name} #{revision}`
+	  `git tag -f #{name} #{revision}`
+  end
+
+  def self.create_message_tag(env, revision, branch, migrate, message)
+    if env == :production
+      tag_name = Time.now.strftime "DEPLOY_%Y%m%d-%H%M%S"
+      branch = branch + "+migrate" if migrate
+      message = "(#{branch}) #{message}"
+      `git tag -f #{tag_name} -m "#{message}" #{revision} `
+      `git push origin #{tag_name}`
+    end
   end
 
   def self.revision_in_origin(branch)

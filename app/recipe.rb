@@ -1,4 +1,4 @@
-#! /usr/bin/ruby
+#!/usr/bin/env ruby
 require ::File.expand_path('../../lib/utils',  __FILE__)
 
 def apply_recipe(env_name)
