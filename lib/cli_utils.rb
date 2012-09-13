@@ -32,6 +32,15 @@ module CliUtils
     nil
   end
 
+  def self.get_message_arg
+    index = self.args.index("-m")
+    if not index.nil? and index + 1 < self.args.length
+      self.args.delete_at(index)
+      return self.args.delete_at(index)
+    end
+    nil
+  end
+
   private
 
   def self.has_argument(list_of_opts)
