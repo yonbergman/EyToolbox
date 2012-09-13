@@ -1,4 +1,4 @@
-#! /usr/bin/ruby
+#!/usr/bin/env ruby
 
 tools_file = File.open("./.tools", "w+")
 Dir.glob("./app/*.rb").each do |app|
