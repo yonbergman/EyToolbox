@@ -11,7 +11,7 @@ tools_file.close()
 puts "Created .tools file"
 
 tools_file_full_path = ::File.expand_path(__FILE__).gsub("install.rb",".tools")
-profile = [".alias", ".bash_profile", ".bashrc", ".zshrc", ".zshenv"].find do |file|
+profile = [".zshrc", ".zshenv",".alias", ".bash_profile", ".bashrc"].find do |file|
   full_file = File.expand_path("~/#{file}")
   File.exists? full_file
 end
