@@ -14,7 +14,9 @@ module CliUtils
     staging = self.has_argument(["staging","stage"]) ? :staging : nil
     production = self.has_argument(["production","prod"]) ? :production : nil
     demo = self.has_argument(["demo"]) ? :demo : nil
-    staging || demo || production || default
+    reg1 = self.has_argument(["reg1"]) ? :reg1 : nil
+    reg2 = self.has_argument(["reg2"]) ? :reg2 : nil
+    staging || demo || production || reg1 || reg2 || default
   end
 
   def self.has_migration_arg

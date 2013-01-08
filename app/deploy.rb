@@ -19,9 +19,20 @@ def tag(env, branch, migrate, message)
   puts "Tagged release"
 end
 
+def double_check_message(message, env)
+  return if (not message.nil?) and message.length > 0
+  return if env != :production
+  result = `read -p "You have no deploy message are you sure? (yY): " -n 1 -r ; echo "$REPLY"`
+  if result.strip.downcase != 'y'
+    puts ''
+    exit
+  end
+end
+
 env = CliUtils.get_env_arg
 migrate = CliUtils.has_migration_arg
 message = CliUtils.get_message_arg
+double_check_message(message,env)
 branch = CliUtils.get_remaining_arg || GitUtils.current_branch
 deploy(env,branch,migrate, message)
 tag(env, branch, migrate, message)
