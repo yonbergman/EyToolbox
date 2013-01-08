@@ -22,7 +22,7 @@ end
 def double_check_message(message, env)
   return if (not message.nil?) and message.length > 0
   return if env != :production
-  result = `read -p "You have no deploy message are you sure? (yY): " -n 1 -r ; echo "$REPLY"`
+  result = `bash -c 'read -p "You have no deploy message are you sure? (yY): " -n 1 -r ; echo "$REPLY"'`
   if result.strip.downcase != 'y'
     puts ''
     exit
