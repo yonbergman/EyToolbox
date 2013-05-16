@@ -43,6 +43,10 @@ module CliUtils
     nil
   end
 
+  def self.command_exists?(command)
+    not `command -v #{command}`.empty?
+  end
+
   private
 
   def self.has_argument(list_of_opts)
