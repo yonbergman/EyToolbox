@@ -17,12 +17,13 @@ puts "Revision: #{ColorUtil.colorize(revision,:yellow)}"
 date = status.match(/Started at:\s+(.+)/)[1]
 puts "Last Deployed at #{date}" unless date.nil? or date.empty?
 
-github_link = "https://github.com/#{EnvUtils.github_account}/#{project}/commit/#{revision}"
+github_project = GitUtils.current_github_project
+github_link = "https://github.com/#{EnvUtils.github_account}/#{github_project}/commit/#{revision}"
 puts ""
 puts github_link
 
 head = GitUtils.current_branch
-github_compare_link = "https://github.com/#{EnvUtils.github_account}/#{project}/compare/#{revision}...#{head}"
+github_compare_link = "https://github.com/#{EnvUtils.github_account}/#{github_project}/compare/#{revision}...#{head}"
 puts ""
 puts "Compare: "
 puts github_compare_link

@@ -22,4 +22,11 @@ module GitUtils
   	`git log origin/#{branch} --pretty=format:'%H' -n 1` 
   end
 
+  def self.current_github_project
+    first_line = `git remote -v | grep 'origin'`.lines.first
+    matcher = /github.com[:\/].+\/([^\s\.]+)/.match(first_line)
+    return EnvUtils.current_project if matcher.nil?
+    matcher[1]
+  end
+
 end
